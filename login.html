@@ -1,0 +1,62 @@
+<meta charset="UTF-8">
+
+<script>
+	
+	function pulaLinha(){
+		document.write("<br>");
+
+	}
+
+	function mostra(frase){
+		document.write(frase);
+		pulaLinha();
+
+	}
+
+	var loginCadastrado = "vnss";
+	var senhaCadastrada = "vnss123";
+
+	var tentativa = 2;
+
+	var loginInformado = prompt("Informe seu login: ");
+
+	if (loginInformado != loginCadastrado){
+
+		while(tentativa <= 3){
+			tentativa = tentativa + 1;
+			alert("Seu login está incorreto!");
+			var loginInformado = prompt("Informe novamente seu login: ");
+			
+			if(loginInformado == loginCadastrado){
+				continue
+			}
+		}
+	}
+	
+	else {
+		tentativa = 2
+
+		var senhaInformada = prompt("Informe sua senha: ");
+		if (senhaInformada != senhaCadastrada){
+
+			while(tentativa <=3){
+				tentativa = tentativa + 1;
+				alert("Senha incorreta!");
+				var senhaInformada = prompt("Informe novamente sua senha: ");
+
+				if (senhaInformada == senhaCadastrada){
+					mostra("Sua senha está correta!");
+					continue
+				}
+			}
+		}
+	}
+
+	if (tentativa > 3){
+		mostra("Você digitou muitas vezes seus dados de forma incorreta, estamos entrando em contato com  servidor para informar este problema!");
+	}
+
+	else {
+		mostra("Tudo certo!");
+	}
+</script>
